@@ -30,8 +30,9 @@ class UsersController {
         password: hashedPassword,
       },
     });
+    /* const { password: _, ...userWithoutPassword } = user; */
+    const { password: ignored, ...userWithoutPassword } = user ?? {};
 
-    const { password: _, ...userWithoutPassword } = user;
     return response.status(201).json(userWithoutPassword);
   }
 }
