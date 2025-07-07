@@ -45,49 +45,48 @@ Desenvolvi o projeto com a finalidade de aprofundar meus conhecimentos em API RE
 
 [POST] /users
 ```json
-Cria um novo usuário
-Body (JSON):
+// Cria um novo usuário
+// Body (JSON):
 {
   "name": "teste",
   "email": "teste@gmail.com",
   "password": "123456"
 }
-Resposta: 
+// Resposta: 
 {
   "id": 1,
   "name": "teste",
   "email": "teste@gmail.com"
 }
-
+```
 🔐 [POST] /login
 Autentica um usuário e retorna um token
 
-Body (JSON):
+```json
+// Body (JSON):
 {
   "email": "teste@gmail.com",
   "password": "123456"
 }
 
-Resposta:
+// Resposta:
 {
   "token": "jwt.token.aqui"
 }
-
+```
 🔒 [GET] /users
 Lista todos os usuários (Requer autenticação com Bearer Token)
+```json
+// Header:
+// Authorization: Bearer seu_token_aqui
 
-Header:
-Authorization: Bearer seu_token_aqui
-
-Resposta:
-[
+// Resposta:
   {
     "id": 1,
     "name": "teste",
     "email": "teste@gmail.com"
   }
-]
-
+```
 ## :memo: Licença
 
 Esse projeto está sob a licença MIT.
